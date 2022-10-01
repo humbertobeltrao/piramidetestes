@@ -319,7 +319,8 @@ public static void main(String[] args) {
                 
                 if(ans == JOptionPane.YES_OPTION) {
                 	DefaultTableModel defaultTableModel = (DefaultTableModel) tableProfessor.getModel();
-                	Vector v = defaultTableModel.getDataVector().get(tableProfessor.getSelectedRow());
+                	@SuppressWarnings("unchecked")
+					Vector<Object> v = defaultTableModel.getDataVector().get(tableProfessor.getSelectedRow());
                     String siapeProf = v.get(v.size()-1).toString();
                     ResultSet rsItem = db.listar(DbUtils.selectItem());
                     tableItem = new JTable(db.buildTableModel(rsItem));
