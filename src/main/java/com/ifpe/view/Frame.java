@@ -319,13 +319,10 @@ public static void main(String[] args) {
                 
                 if(ans == JOptionPane.YES_OPTION) {
                 	DefaultTableModel defaultTableModel = (DefaultTableModel) tableProfessor.getModel();
-<<<<<<< HEAD
                 	@SuppressWarnings("unchecked")
 					Vector<Object> v = defaultTableModel.getDataVector().get(tableProfessor.getSelectedRow());
-=======
                     @SuppressWarnings("unchecked")
                 	Vector<Object> v = defaultTableModel.getDataVector().get(tableProfessor.getSelectedRow());
->>>>>>> f3de652d467ace9143c08dd2e70ee539f92d878d
                     String siapeProf = v.get(v.size()-1).toString();
                     ResultSet rsItem = db.listar(DbUtils.selectItem());
                     tableItem = new JTable(db.buildTableModel(rsItem));
